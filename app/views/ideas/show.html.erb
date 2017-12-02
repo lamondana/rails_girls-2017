@@ -1,0 +1,27 @@
+<div id = show-content>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @idea.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @idea.description %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag(@idea.picture_url, width: 300) if @idea.picture.present? %>
+</p>
+
+<p>
+  <% @idea.ratings.times do |r|%>
+  <img src="/assets/star.png" width="30px">
+  <%end%>
+</p>
+
+<%= link_to 'Edit', edit_idea_path(@idea) %> |
+<%= link_to 'Back', ideas_path %>
+</div>
